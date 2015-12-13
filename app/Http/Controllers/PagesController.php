@@ -21,7 +21,7 @@ class PagesController extends Controller
         $mode='search/movie?query=';
         $movie_url=$url.$mode.$title.$apikey;
         $specifurl='https://www.themoviedb.org/movie/';
-        $configurl = 'http://api.themoviedb.org/3/configuration?'.$apikey;
+        $configurl = 'http://api.themoviedb.org/3/configuration?api_key=f6aefca82fe53aaceea53aad7143be63';
 
         $movies_json=file_get_contents($movie_url);
         $config_json=file_get_contents($configurl);

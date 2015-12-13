@@ -1,25 +1,25 @@
 <html>
 <h3>Movie results</h3>
+<table>
 @if($specifurl)
  @if(count($movies_array and $config_array))
 
-  <ul>
    @foreach($movies_array['results'] as $movie)
-
-      <li><label><b>Id:</b></label>{{ $movie['id'] }}&nbsp;
-         <label><b>Original title:</b></label>{{ $movie['original_title'] }}
-         <label><b>Title:</b></label>{{ $movie['title'] }}
-         <a href={{$specifurl}}{{$movie['id']}}-{{$movie['original_title']}}>view</a>
-
-         @foreach($config_array['images'] as $image)
-
-         @endforeach
-
-      </li>
-
+      <tr>
+      <td>
+      <img src="
+          {{$image=$config_array['images']['base_url'].
+            $image=$config_array['images']['poster_sizes'][2].
+            $movie['poster_path']}}
+          "></td>
+      <td><label><b>Id:</b></label>{{ $movie['id'] }}</td>
+      <td><label><b>Original title:</b></label>{{ $movie['original_title'] }}</td>
+      <td><label><b>Title:</b></label>{{ $movie['title'] }}</td>
+      <td><a href={{$specifurl}}{{$movie['id']}}-{{$movie['original_title']}}>view</a></td>
+      </tr>
    @endforeach
-  </ul>
 
  @endif
 @endif
+</table>
 </html>
